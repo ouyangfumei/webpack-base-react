@@ -10,31 +10,30 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = (env, argv) => {
     const baseWebpackConfig = BaseConfig(env, argv);
     return merge(baseWebpackConfig, {
-        // devtool: "module-source-map",
-        module: {
-            rules: [{ // 压缩图片文件
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                use: [{
-                    loader: 'image-webpack-loader',
-                    options: {
-                        optipng: {
-                            optimizationLevel: 7
-                        },
-                        gifsicle: {
-                            interlaced: false
-                        },
-                        pngquant: {
-                            quality: '65-90',
-                            speed: 4
-                        },
-                        mozjpeg: {
-                            quality: 65,
-                            progressive: true
-                        }
-                    }
-                }]
-            }]
-        },
+        // module: {
+        //     rules: [{ // 压缩图片文件
+        //         test: /\.(jpe?g|png|gif|svg)$/i,
+        //         use: [{
+        //             loader: 'image-webpack-loader',
+        //             options: {
+        //                 optipng: {
+        //                     optimizationLevel: 7
+        //                 },
+        //                 gifsicle: {
+        //                     interlaced: false
+        //                 },
+        //                 pngquant: {
+        //                     quality: '65-90',
+        //                     speed: 4
+        //                 },
+        //                 mozjpeg: {
+        //                     quality: 65,
+        //                     progressive: true
+        //                 }
+        //             }
+        //         }]
+        //     }]
+        // },
         plugins: [
             new OptimizeCssAssetsPlugin(), // css 压缩
             new CleanWebpackPlugin() // 清理文件，默认清理 编译仓库
