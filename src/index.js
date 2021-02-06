@@ -1,15 +1,7 @@
 
-import css from "./index.less";
-import css1 from "./index1.less";
-import index1 from './index1.js'
-import axios from 'axios';
-console.log(111111110022234113);
-console.log(process.env.NODE_ENV)
-axios.get('/api/info').then(res=>{console.log(res) })
 
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './pages/hooks'
 
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-// import App from './routes'
-
-// ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
